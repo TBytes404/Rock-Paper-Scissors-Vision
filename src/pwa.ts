@@ -32,8 +32,8 @@ export function initPWA(app: Element) {
   }
 
   let swActivated = false
-  // check for updates every hour
-  const period = 60 * 60 * 1000
+  // check for updates every day
+  const period = 24 * 60 * 60 * 1000
 
   window.addEventListener('load', () => {
     pwaCloseBtn.addEventListener('click', () => hidePwaToast(true))
@@ -67,7 +67,7 @@ export function initPWA(app: Element) {
 }
 
 /**
- * This function will register a periodic sync check every hour, you can modify the interval as needed.
+ * This function will register a periodic sync check, you can modify the interval as needed.
  */
 function registerPeriodicSync(period: number, swUrl: string, r: ServiceWorkerRegistration) {
   if (period <= 0) return

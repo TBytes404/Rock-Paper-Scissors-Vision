@@ -1,9 +1,11 @@
+import basicSsl from '@vitejs/plugin-basic-ssl';
 import { VitePWA } from 'vite-plugin-pwa';
 import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [VitePWA({
+  plugins: [basicSsl({ certDir: '.cert' }),
+  VitePWA({
     registerType: 'autoUpdate',
     injectRegister: false,
 

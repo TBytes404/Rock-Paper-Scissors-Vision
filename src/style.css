@@ -13,10 +13,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #container {
-  width: fit-content;
+  max-width: 100vw;
+  overflow: hidden;
+  width: max-content;
   margin: auto;
   text-align: center;
+}
+
+#container>div {
+  margin-bottom: 1em;
+}
+
+#match {
+  border: 1px solid #8885;
+  border-radius: 0.3em;
 }
 
 #match>div {
@@ -34,6 +51,8 @@
 #match button {
   margin-left: 1em;
   font-size: 1em;
+  padding: 0.3em 0.5em;
+  border-radius: 0.3em;
 }
 
 #media {
@@ -42,6 +61,7 @@
 
 #video,
 #canvas {
+  max-width: 100vw;
   grid-column: 1;
   grid-row: 1;
 }
@@ -54,7 +74,7 @@ ol {
 }
 
 ol>li {
-  font-size: 2em;
+  font-size: 1.6em;
   font-weight: bold;
   padding: 0.3em 0.5em;
   border-radius: 0.3em;
@@ -68,6 +88,8 @@ ol>li {
 #gestures>.pause {
   background-color: #eb6f92;
 }
+
+/* #match button:disabled { } */
 
 #pwa-toast {
   visibility: hidden;
